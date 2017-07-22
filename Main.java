@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Movie{
     private String name;
 
@@ -69,29 +71,19 @@ class MovieNotListed extends Movie {
         super("Not Listed");
     }
 }
-
 public class Main {
+    public static Random rand = new Random();
+
     public static void main(String[] args){
-        for(int i = 0; i < 11; i++){
+        for(int i = 0; i < rand.nextInt(20) + 1; i++){
             Movie movie = randomMovie();
-            System.out.println("Movie No. " + i + ": " + movie.getName() + "\n" + "Category: " + movie.category());
+            System.out.printf("Movie No. %d: %s\nCategory: %s.\n", (i+1), movie.getName(), movie.category());
         }
     }
     public static Movie randomMovie(){
-        int randomNumber = (int) (Math.random() * 5) +1;
-        switch (randomNumber){
-            case 1:
-                return new FightClub();
-            case 2:
-                return new Drive();
-            case 3:
-                return new PulpFiction();
-            case 4:
-                return new StarWars();
-            case 5:
-                return new DieHard();
-            default:
-                return new MovieNotListed();
-        }
+        
+        int randomNumber = rand.nextInt(5);
+        return randomNumber == 1 ? new FightClub() : randomNumber == 2 ?   new Drive() : randomNumber == 3 ? new PulpFiction() : randomNumber == 4 ? new StarWars() : randomNumber == 5 ? new DieHard() : new MovieNotListed();
+        
     }
 }
