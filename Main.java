@@ -82,7 +82,6 @@ public class Main {
     }
     public static Movie randomMovie(){
         int randomNumber = rand.nextInt(6);
- 
         Movie[] obj = new Movie[]  {  new FightClub(), new Drive(), new PulpFiction(),new StarWars(),new DieHard(),new MovieNotListed()};
 
         return obj[randomNumber];
