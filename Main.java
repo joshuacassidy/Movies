@@ -83,7 +83,15 @@ public class Main {
     public static Movie randomMovie(){
         
         int randomNumber = rand.nextInt(5);
-        return randomNumber == 1 ? new FightClub() : randomNumber == 2 ?   new Drive() : randomNumber == 3 ? new PulpFiction() : randomNumber == 4 ? new StarWars() : randomNumber == 5 ? new DieHard() : new MovieNotListed();
+        Movie[] obj = new Movie[]  {  new FightClub(), new Drive(), new PulpFiction(),new StarWars(),new DieHard()};
+
+
+    for(Movie i  : obj){
+        if (i == obj[randomNumber]){
+            return i;
+        } 
+    }
+    return new MovieNotListed();
         
     }
 }
