@@ -75,6 +75,7 @@ public class Main {
     public static Random rand = new Random();
 
     public static void main(String[] args){
+        System.out.print("\033[H\033[2J");
         for(int i = 0; i < rand.nextInt(20) + 1; i++){
             Movie movie = randomMovie();
             System.out.printf("Movie No. %d: %s\nCategory: %s.\n", (i+1), movie.getName(), movie.category());
