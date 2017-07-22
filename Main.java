@@ -81,17 +81,11 @@ public class Main {
         }
     }
     public static Movie randomMovie(){
-        
-        int randomNumber = rand.nextInt(5);
-        Movie[] obj = new Movie[]  {  new FightClub(), new Drive(), new PulpFiction(),new StarWars(),new DieHard()};
+        int randomNumber = rand.nextInt(6);
+ 
+        Movie[] obj = new Movie[]  {  new FightClub(), new Drive(), new PulpFiction(),new StarWars(),new DieHard(),new MovieNotListed()};
 
-
-    for(Movie i  : obj){
-        if (i == obj[randomNumber]){
-            return i;
-        } 
-    }
-    return new MovieNotListed();
+        return obj[randomNumber];
         
     }
 }
